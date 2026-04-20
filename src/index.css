@@ -1,0 +1,133 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* BasketBeats Admin — Design System
+   Deep blue, white, and warm gold accents.
+   All colors HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 220 30% 97%;
+    --foreground: 220 45% 12%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 45% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 45% 12%;
+
+    /* Brand deep blue (matches #1458ab) */
+    --primary: 212 78% 37%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 212 90% 55%;
+    --primary-deep: 218 72% 18%;
+
+    --secondary: 220 30% 94%;
+    --secondary-foreground: 220 45% 12%;
+
+    --muted: 220 25% 94%;
+    --muted-foreground: 220 15% 42%;
+
+    /* Warm gold accent */
+    --accent: 42 78% 52%;
+    --accent-foreground: 220 50% 12%;
+    --accent-soft: 38 95% 92%;
+
+    --destructive: 0 75% 52%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 20% 88%;
+    --input: 220 20% 88%;
+    --ring: 212 78% 37%;
+
+    --radius: 0.85rem;
+
+    /* Brand gradients */
+    --gradient-brand: linear-gradient(135deg, hsl(218 72% 18%) 0%, hsl(212 78% 37%) 100%);
+    --gradient-court: linear-gradient(135deg, hsl(212 78% 37%) 0%, hsl(212 90% 55%) 100%);
+    --gradient-gold: linear-gradient(135deg, hsl(42 78% 52%) 0%, hsl(35 85% 60%) 100%);
+    --gradient-hero: radial-gradient(900px 450px at 65% 30%, hsl(42 78% 52% / 0.18), transparent 60%),
+                    radial-gradient(900px 450px at 20% 35%, hsl(212 90% 55% / 0.18), transparent 60%),
+                    linear-gradient(135deg, hsl(218 72% 18%) 0%, hsl(212 78% 37%) 100%);
+
+    /* Glass surfaces */
+    --glass-bg: 0 0% 100% / 0.65;
+    --glass-border: 220 30% 90% / 0.6;
+
+    /* Shadows */
+    --shadow-card: 0 10px 30px -12px hsl(218 72% 18% / 0.18);
+    --shadow-elegant: 0 24px 60px -20px hsl(212 78% 37% / 0.35);
+    --shadow-soft: 0 4px 18px -8px hsl(218 72% 18% / 0.15);
+
+    /* Sidebar */
+    --sidebar-background: 218 72% 14%;
+    --sidebar-foreground: 220 30% 92%;
+    --sidebar-primary: 42 78% 52%;
+    --sidebar-primary-foreground: 218 72% 14%;
+    --sidebar-accent: 218 65% 22%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 218 60% 22%;
+    --sidebar-ring: 42 78% 52%;
+
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .dark {
+    --background: 220 40% 8%;
+    --foreground: 220 30% 95%;
+    --card: 220 35% 12%;
+    --card-foreground: 220 30% 95%;
+    --popover: 220 35% 12%;
+    --popover-foreground: 220 30% 95%;
+    --primary: 212 90% 55%;
+    --primary-foreground: 220 50% 8%;
+    --secondary: 220 30% 18%;
+    --secondary-foreground: 220 30% 95%;
+    --muted: 220 30% 16%;
+    --muted-foreground: 220 15% 65%;
+    --accent: 42 78% 52%;
+    --accent-foreground: 220 50% 8%;
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 220 25% 22%;
+    --input: 220 25% 22%;
+    --ring: 212 90% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: "Poppins", system-ui, -apple-system, "Segoe UI", sans-serif;
+  }
+  h1, h2, h3, h4 {
+    font-family: "Poppins", system-ui, sans-serif;
+    @apply font-bold tracking-tight;
+  }
+}
+
+@layer components {
+  .glass-card {
+    background: hsl(var(--glass-bg));
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid hsl(var(--glass-border));
+    box-shadow: var(--shadow-card);
+  }
+  .brand-gradient {
+    background: var(--gradient-brand);
+  }
+  .court-gradient {
+    background: var(--gradient-court);
+  }
+  .gold-gradient {
+    background: var(--gradient-gold);
+  }
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
